@@ -5,16 +5,18 @@ Got the inspiration from doing 0x03 shell tasks
 #This project aims to solve or eliminate the need to constantly type 4 commands for every shell task.
 It aims to shorten sequence of command needed for ALX Shell projects.
 
-#The script eliminates the need to constatly type out the following commands sequentially.
+#The script eliminates the need to constantly type out the following commands sequentially.
 
 #chmod +x file_name
 #git add .
-#git commit -m "file_name"
+#git commit -m "file_name//commit message"
 #git push
 
 #it shortens this to a single line **./ep.sh file_name** 
+#you have options to press enter and use "file_name" as commit message or input your personal commit message
 
-instead of having to write 4 sequential commands multiple times.
+
+Instead of having to write 4 sequential commands multiple times.
 now you get to write 1 per task.
 
 
