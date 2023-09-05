@@ -12,7 +12,7 @@ It aims to shorten sequence of command needed for ALX Shell projects.
 #git commit -m "file_name"
 #git push
 
-#it shortens this to a single line  ./ep.sh file_name 
+#it shortens this to a single line **./ep.sh file_name** 
 
 instead of having to write 4 sequential commands multiple times.
 now you get to write 1 per task.
@@ -21,7 +21,7 @@ now you get to write 1 per task.
 1. You can copy code and paste in text editor of your choice.
 name as scriptname.sh where "scriptname" could be anything you choose, here it is **ep.sh** (short enough for us lazy people lol)
 2. Give appropiate permission chmod +x
-3. execute you go ./scriptname.sh file_name
+3. execute you go **./scriptname.sh file_name**
 
 
 
