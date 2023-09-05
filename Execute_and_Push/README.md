@@ -30,7 +30,8 @@ You can place in current directory or if you would like to be able to launch fro
 2. mv scriptname.sh ~/bin/
 3. export PATH="$PATH:$HOME/bin
 4. Reload shell profile to make changes
-5. Now you should be able to run script from anywhere
+5. source ~/.bashrc
+6. Now you should be able to run script from anywhere
 
 enjoy!
 
