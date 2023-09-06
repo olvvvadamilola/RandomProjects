@@ -2,6 +2,8 @@
 
 # Get name of file to be executed
 filename=$1
+active_branch=$(git branch | grep ^* | awk '{print $2}')
+ref_available=$(ls "../.git/refs/remotes/origin/$active_branch" 2> /dev/null)
 
 function show_usage() {
 	echo "Usage: ep <filename>"
@@ -40,7 +42,12 @@ function perform_git_ops {
 	#Use entered commit message
 	git commit -m "$commit_message"
 	#push changes to remote REPOSITORY
-	git push
+	if [ -f "$ref_available" ]; then # checks if upstream is being trackeed
+		git push
+	else
+		# set the upstream and track it - this is a fresh branch
+		git push -u origin $active_branch
+	fi
 
 	final_checks
 }
@@ -48,8 +55,9 @@ function perform_git_ops {
 function final_checks() {
 	#send user message confirming successful commit and push of file
 	if [ $? -eq 0 ]; then
+		echo
 		echo "changes successfully commited and pushed for $filename, you can now use the checker."
-		echo "Here your latest log $(git log --name-status --online | head -2)"
+		echo "Here your latest log $(git log --name-status --oneline | head -2)"
 	else
 		echo
 		echo "An error occurred while pushing your commit... Please check your connection"
